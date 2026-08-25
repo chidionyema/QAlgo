@@ -1,0 +1,11 @@
+# gitleaks allow-list for this repository. The estate security gate
+# (chidionyema/idp/.github/actions/security-scan) runs gitleaks over the full
+# history; every entry here is a match that is not a credential, with the
+# reason. A real secret is never allow-listed: it is rotated (crew#240).
+[extend]
+useDefault = true
+
+title = "QAlgo"
+[allowlist]
+description = "self-signed development TLS keys for ui.dev.io / api.dev.io / localhost, loaded by src/api/run.py and src/ui/https-server.js; they authenticate nothing outside a developer machine"
+paths = [ '''(^|/)(ui|api)\.(dev\.io|local)\.key$''' ]
