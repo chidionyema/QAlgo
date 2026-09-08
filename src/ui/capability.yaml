@@ -1,0 +1,12 @@
+id: auto-ui
+name: ui
+repo: QAlgo
+path: QAlgo/src/ui
+state: HAS_CLUSTER_MANIFEST
+git_branch: main
+last_commit: '2023-11-23'
+code_files: 65
+test_files: 0
+indicators:
+- package.json
+requires_deep_review: true

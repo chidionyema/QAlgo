@@ -12,7 +12,6 @@ import logging
 import os
 import time
 import requests
-
 import traceback
 
 # Third-party libraries
@@ -209,7 +208,6 @@ def register():
         return jsonify({"message": "Password should be at least 8 characters!"}), 400
 
     user = retrieve_or_create_user(email, "", "")
-
     token = generate_jwt_token_for_user(user)
 
     # Print statements for debugging
@@ -239,8 +237,10 @@ def login():
 
 google = oauth.remote_app(
     'google',
-    consumer_key=os.environ.get('GOOGLE_CLIENT_ID'),
-    consumer_secret=os.environ.get('GOOGLE_CLIENT_SECRET'),
+    consumer_key= '',
+    # os.environ.get('GOOGLE_CLIENT_ID'),
+    consumer_secret= '',
+    # os.environ.get('GOOGLE_CLIENT_SECRET'),
     request_token_params={'scope': 'email'},
     base_url='https://www.googleapis.com/oauth2/v1/',
     request_token_url=None,
